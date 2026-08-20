@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f7fb" />
+    <meta name="description" content="11408 线性代数大观：把行列式、矩阵、向量、方程组与特征理论连成一套系统。" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="11408大观" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icon-32.png" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>11408 大观 · 线性代数</title>
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar" aria-label="章节导航">
+        <a class="brand" href="#overview" aria-label="11408 大观首页">
+          <img src="./assets/icon-192.png" alt="" width="44" height="44" />
+          <span><strong>11408 大观</strong><small>Linear algebra</small></span>
+        </a>
+
+        <nav id="chapterNav" class="chapter-nav"></nav>
+
+        <section class="side-progress" aria-labelledby="progressTitle">
+          <div class="progress-copy">
+            <span id="progressTitle">线代掌握度</span>
+            <strong id="progressValue">0%</strong>
+          </div>
+          <div class="progress-track" aria-hidden="true"><i id="progressBar"></i></div>
+          <p><span id="masteredCount">0</span> / <span id="conceptCount">0</span> 个知识点已掌握</p>
+        </section>
+
+        <p class="side-note">内容依据 CXY-003 / CXY-004 的讲解主线整理。公式与结论均以考试成立条件为边界。</p>
+      </aside>
+
+      <main class="main">
+        <header class="intro" id="overview">
+          <div class="eyebrow"><span>线性代数</span><i></i><span>数学一</span><i></i><span>32 分系统</span></div>
+          <h1>看见整张图，<br /><em>再做每一道题。</em></h1>
+          <p>这里不按教材顺序堆公式。每个知识点都从题目里的“启动信号”出发，把成立条件、结论链、考试步骤和易错点放在一起。</p>
+          <div class="intro-actions">
+            <button class="primary-btn" id="continueBtn" type="button">从上次位置继续</button>
+            <button class="quiet-btn" id="resetBtn" type="button">重置学习记录</button>
+          </div>
+          <div class="route" aria-label="线性代数知识主线">
+            <button data-jump="determinant"><b>行列式</b><small>判可逆</small></button>
+            <span>→</span>
+            <button data-jump="matrix"><b>矩阵</b><small>算与变换</small></button>
+            <span>→</span>
+            <button data-jump="vector"><b>向量</b><small>构造空间</small></button>
+            <span>→</span>
+            <button data-jump="equation"><b>方程组</b><small>描述解集</small></button>
+            <span>→</span>
+            <button data-jump="eigen"><b>特征</b><small>综合收束</small></button>
+          </div>
+        </header>
+
+        <section class="controls" aria-label="检索与筛选">
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" /></svg>
+            <input id="searchInput" type="search" placeholder="搜结论、题型或关键词  /" autocomplete="off" />
+            <kbd>⌘ K</kbd>
+          </label>
+          <div id="levelFilters" class="filters" role="group" aria-label="难度筛选">
+            <button class="active" data-level="all">全部</button>
+            <button data-level="must">必须掌握</button>
+            <button data-level="frequent">高频题型</button>
+            <button data-level="advanced">综合拔高</button>
+          </div>
+        </section>
+
+        <section id="chainSection" class="chains" aria-labelledby="chainTitle">
+          <div class="section-heading">
+            <div><span>先背联动，不背孤岛</span><h2 id="chainTitle">四条考试发动机</h2></div>
+            <p>条件一出现，沿链条连续推出，不要停在第一步。</p>
+          </div>
+          <div id="chainGrid" class="chain-grid"></div>
+        </section>
+
+        <div id="contentRoot" class="content-root"></div>
+
+        <section class="timeline-section" aria-labelledby="timelineTitle">
+          <div class="section-heading">
+            <div><span>与原视频逐章对应</span><h2 id="timelineTitle">讲解时间轴</h2></div>
+            <p>用于回到老师原讲解核对；系统正文不依赖视频截图。</p>
+          </div>
+          <div id="timeline" class="timeline"></div>
+        </section>
+
+        <footer>
+          <p>11408 Grand View · 当前模块：线性代数</p>
+          <p>离线可用 · 学习记录仅保存在当前设备</p>
+        </footer>
+      </main>
+    </div>
+
+    <button id="mobileMenuBtn" class="mobile-menu" type="button" aria-label="打开章节导航" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <div id="scrim" class="scrim" hidden></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
